@@ -10,18 +10,34 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
-import com.example.shopinglist.ui.theme.Typography
+import com.example.shoppinglist.ui.theme.Typography
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary = PinkDark,
+    onPrimary = PinkOn,
+    primaryContainer = PinkDarkPrimaryContainer,
+    onPrimaryContainer = PinkDarkOnPrimaryContainer,
+    secondary = PinkSecondary,
+    secondaryContainer = PinkDarkSecondaryContainer,
+    onSecondaryContainer = PinkDarkOnSecondaryContainer,
+    background = PinkDarkBackground,
+    onBackground = PinkDarkOnBackground,
+    surface = PinkSurfaceDark,
+    onSurface = PinkOnSurfaceDark
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
+    primary = PinkLight,
+    onPrimary = PinkOn,
+    primaryContainer = PinkPrimaryContainer,
+    onPrimaryContainer = PinkOnPrimaryContainer,
+    secondary = PinkSecondary,
+    secondaryContainer = PinkSecondaryContainer,
+    onSecondaryContainer = PinkOnSecondaryContainer,
+    background = PinkBackground,
+    onBackground = PinkOnBackground,
+    surface = PinkSurface,
+    onSurface = PinkOnSurface
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
@@ -38,7 +54,7 @@ private val LightColorScheme = lightColorScheme(
 fun ShoppingListTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
@@ -54,6 +70,7 @@ fun ShoppingListTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
+        shapes = Shapes,
         content = content
     )
 }
